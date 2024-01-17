@@ -27,14 +27,6 @@
     "tailwindcss",
     "prettier"
   ],
-  "prettier/prettier": [
-    "error",
-    {
-      "singleQuote": true,
-      "parser": "flow",
-      "endOfLine": "auto"
-    }
-  ],
   "overrides": [
     {
       "files": [
@@ -84,6 +76,14 @@
     "react/react-in-jsx-scope": "off",
     "react/jsx-uses-react": "off",
     "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
+    "react-hooks/exhaustive-deps": "warn",
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "parser": "flow",
+        "endOfLine": "auto"
+      }
+    ]
   }
 }
