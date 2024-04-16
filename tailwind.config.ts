@@ -20,6 +20,9 @@ const config = {
         '2xl': '1400px'
       }
     },
+    fontFamily: {
+      sans: ['var(--font-sans)']
+    },
     extend: {
       spacing: {
         18: '72px'
