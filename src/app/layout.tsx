@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import type { Viewport } from 'next'
 
 import '@/styles/globals.css'
 import { ThemeProvider } from '@/components/theme-provider'
@@ -10,21 +11,19 @@ type RootLayoutProps = {
   children: React.ReactNode
 }
 
+export const viewport: Viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: 'white' },
+    { media: '(prefers-color-scheme: dark)', color: 'black' }
+  ]
+}
+
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
     template: `%s - ${siteConfig.name}`
   },
-  description: siteConfig.description,
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: 'white' },
-    { media: '(prefers-color-scheme: dark)', color: 'black' }
-  ],
-  icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon-16x16.png',
-    apple: '/apple-touch-icon.png'
-  }
+  description: siteConfig.description
 }
 
 export default function RootLayout({ children }: RootLayoutProps) {
@@ -33,7 +32,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       lang='pt-br'
       className={cn(fontSans.variable, 'scroll-smooth')}
       suppressHydrationWarning>
-      <body className='min-h-screen bg-white font-sans text-neutral-700 antialiased'>
+      <body className='min-h-screen bg-neutral-50 font-sans text-neutral-700 antialiased'>
         <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
           <div className='relative flex min-h-screen flex-col'>
             <div className='flex-1'>{children}</div>
